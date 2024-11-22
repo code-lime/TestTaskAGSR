@@ -12,4 +12,13 @@
     <ProjectReference Include="..\TaskAGSR.Domain\TaskAGSR.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Using Remove="Microsoft.Extensions.Logging" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+  </ItemGroup>
+
 </Project>
