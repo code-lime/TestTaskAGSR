@@ -7,9 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\System.Runtime.CompilerServices\System.Runtime.CompilerServices.csproj" />
-    <ProjectReference Include="..\TaskAGSR.Application\TaskAGSR.Application.csproj" />
-  </ItemGroup>
-
 </Project>

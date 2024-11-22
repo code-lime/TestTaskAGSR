@@ -2,11 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\System.Runtime.CompilerServices\System.Runtime.CompilerServices.csproj" />
     <ProjectReference Include="..\TaskAGSR.Domain\TaskAGSR.Domain.csproj" />
   </ItemGroup>
 

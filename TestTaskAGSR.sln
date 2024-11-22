@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskAGSR.Domain", "src\Task
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskAGSR.Infrastructure", "src\TaskAGSR.Infrastructure\TaskAGSR.Infrastructure.csproj", "{071B73B7-73A6-4573-BB14-642FA1E84ACE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utils", "utils", "{31AC27F9-6AD2-48FC-A010-5B3FFAD7FB28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Runtime.CompilerServices", "src\System.Runtime.CompilerServices\System.Runtime.CompilerServices.csproj", "{C54198C0-C9F8-0397-BDC4-AA27DE5CB77A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,10 @@ Global
 		{071B73B7-73A6-4573-BB14-642FA1E84ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{071B73B7-73A6-4573-BB14-642FA1E84ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{071B73B7-73A6-4573-BB14-642FA1E84ACE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C54198C0-C9F8-0397-BDC4-AA27DE5CB77A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C54198C0-C9F8-0397-BDC4-AA27DE5CB77A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C54198C0-C9F8-0397-BDC4-AA27DE5CB77A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C54198C0-C9F8-0397-BDC4-AA27DE5CB77A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +52,7 @@ Global
 		{138FF7FE-4CB3-4E85-8D9A-4AA116156E0F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{F90EC6A9-4CFB-45D9-AE53-F07C582BA2C4} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{071B73B7-73A6-4573-BB14-642FA1E84ACE} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{C54198C0-C9F8-0397-BDC4-AA27DE5CB77A} = {31AC27F9-6AD2-48FC-A010-5B3FFAD7FB28}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D9B4E964-EA93-476E-B1C3-657F3D2FFF74}
