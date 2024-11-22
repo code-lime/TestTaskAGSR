@@ -1,0 +1,71 @@
+services:
+  taskagsr:
+    image: ${DOCKER_REGISTRY-}taskagsr
+    container_name: TaskAGSR.AspNet
+    build:
+      context: .
+      dockerfile: src/TaskAGSR/Dockerfile
+    networks:
+      - mariadb
+    depends_on:
+      mariadb:
+        condition: service_healthy
+    links:
+      - mariadb
+    tty: true
+    volumes:
+      - ./etc/aspnet/protection:/aspnet/protection
+      - ./etc/aspnet/logs:/app/logs
+    environment:
+      TZ: Europe/Minsk
+      
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_HTTP_PORTS: 80
+      Serilog__MinimumLevel__Default: ${LOGGING_LEVEL}
+
+      DataBase__Host: mariadb
+      DataBase__Port: 3306
+      DataBase__User: ${MARIADB_USERNAME}
+      DataBase__Password: ${MARIADB_PASSWORD}
+      DataBase__Database: ${MARIADB_DATABASE}
+
+      DataProtection__Path: /aspnet/protection
+    ports:
+      - ${API_PORT_HTTP}:80
+    restart: always
+  mariadb:
+    image: mariadb:latest
+    hostname: mariadb
+    container_name: TaskAGSR.MariaDB
+    environment:
+      TZ: Europe/Minsk
+      MYSQL_DATABASE: ${MARIADB_DATABASE}
+      MYSQL_USER: ${MARIADB_USERNAME}
+      MYSQL_PASSWORD: ${MARIADB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MARIADB_PASSWORD}
+    volumes:
+      - ./etc/db:/var/lib/mysql
+    networks:
+      - mariadb
+    ports:
+      - ${MARIADB_PORT}:3306
+    healthcheck:
+      test: [ "CMD", "healthcheck.sh", "--connect", "--innodb_initialized" ]
+      start_period: 30s
+      start_interval: 10s
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    restart: always
+networks:
+  mariadb:
+    driver: bridge
+
+# LOGGING_LEVEL
+# 
+# API_PORT_HTTP
+# 
+# MARIADB_DATABASE
+# MARIADB_USERNAME
+# MARIADB_PASSWORD
+# MARIADB_PORT

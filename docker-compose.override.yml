@@ -1,0 +1,4 @@
+services:
+  taskagsr:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
