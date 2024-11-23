@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "files", "files", "{02EA681E
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hl7.Fhir.Search", "src\Hl7.Fhir.Search\Hl7.Fhir.Search.csproj", "{DB0D8A72-82C8-4810-BDBD-84C6ECA32F53}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB0D8A72-82C8-4810-BDBD-84C6ECA32F53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB0D8A72-82C8-4810-BDBD-84C6ECA32F53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB0D8A72-82C8-4810-BDBD-84C6ECA32F53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB0D8A72-82C8-4810-BDBD-84C6ECA32F53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 		{071B73B7-73A6-4573-BB14-642FA1E84ACE} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{31AC27F9-6AD2-48FC-A010-5B3FFAD7FB28} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{C54198C0-C9F8-0397-BDC4-AA27DE5CB77A} = {31AC27F9-6AD2-48FC-A010-5B3FFAD7FB28}
+		{DB0D8A72-82C8-4810-BDBD-84C6ECA32F53} = {31AC27F9-6AD2-48FC-A010-5B3FFAD7FB28}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D9B4E964-EA93-476E-B1C3-657F3D2FFF74}
