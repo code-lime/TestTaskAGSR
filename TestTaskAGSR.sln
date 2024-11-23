@@ -23,6 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "files", "files", "{45CB8337
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		README.md = README.md
 		TaskAGSR.postman_collection.json = TaskAGSR.postman_collection.json
 	EndProjectSection
 EndProject
