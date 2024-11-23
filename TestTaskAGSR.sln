@@ -23,6 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "files", "files", "{45CB8337
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		TaskAGSR.postman_collection.json = TaskAGSR.postman_collection.json
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hl7.Fhir.Search", "src\Hl7.Fhir.Search\Hl7.Fhir.Search.csproj", "{DB0D8A72-82C8-4810-BDBD-84C6ECA32F53}"

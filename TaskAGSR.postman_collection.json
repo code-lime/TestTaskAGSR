@@ -1,0 +1,1249 @@
+{
+	"info": {
+		"_postman_id": "0219b5e6-c609-4b42-bf2e-985edfdeabd3",
+		"name": "TaskAGSR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26591497"
+	},
+	"item": [
+		{
+			"name": "patient",
+			"item": [
+				{
+					"name": "search",
+					"item": [
+						{
+							"name": "Get patients record by birth date with using format Hl7.Fhir.Search#DateTime",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/patient/search?birth_date=<string>&birth_date=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient",
+										"search"
+									],
+									"query": [
+										{
+											"key": "birth_date",
+											"value": "<string>",
+											"description": "Search by birth date list with using format Hl7.Fhir.Search#DateTime"
+										},
+										{
+											"key": "birth_date",
+											"value": "<string>",
+											"description": "Search by birth date list with using format Hl7.Fhir.Search#DateTime"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Return patients record",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/patient/search?birth_date=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"patient",
+												"search"
+											],
+											"query": [
+												{
+													"key": "birth_date",
+													"value": "<string>",
+													"description": "Search by birth date list with using format Hl7.Fhir.Search#DateTime"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"success\",\n  \"response\": [\n    {\n      \"name\": {\n        \"use\": \"official\",\n        \"family\": \"<string>\",\n        \"given\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<uuid>\"\n      },\n      \"gender\": \"unknown\",\n      \"birthDate\": \"<dateTime>\",\n      \"active\": \"<boolean>\"\n    },\n    {\n      \"name\": {\n        \"use\": \"official\",\n        \"family\": \"<string>\",\n        \"given\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<uuid>\"\n      },\n      \"gender\": \"male\",\n      \"birthDate\": \"<dateTime>\",\n      \"active\": \"<boolean>\"\n    }\n  ]\n}"
+								},
+								{
+									"name": "Internal server error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/patient/search?birth_date=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"patient",
+												"search"
+											],
+											"query": [
+												{
+													"key": "birth_date",
+													"value": "<string>",
+													"description": "Search by birth date list with using format Hl7.Fhir.Search#DateTime"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"error\": \"<string>\",\n  \"status\": \"error\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Create new patient record",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": {\n    \"use\": \"official\",\n    \"family\": \"<string>\",\n    \"given\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"gender\": \"other\",\n  \"birthDate\": \"<dateTime>\",\n  \"active\": \"<boolean>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/patient",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"patient"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Return id from created record",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": {\n    \"use\": \"official\",\n    \"family\": \"<string>\",\n    \"given\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"gender\": \"other\",\n  \"birthDate\": \"<dateTime>\",\n  \"active\": \"<boolean>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/patient",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"success\",\n  \"response\": \"<uuid>\"\n}"
+						},
+						{
+							"name": "Internal server error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": {\n    \"use\": \"official\",\n    \"family\": \"<string>\",\n    \"given\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"gender\": \"other\",\n  \"birthDate\": \"<dateTime>\",\n  \"active\": \"<boolean>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/patient",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"<string>\",\n  \"status\": \"error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get patient record by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/patient?id=<uuid>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"patient"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "<uuid>",
+									"description": "Patient id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Return record of patient",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/patient?id=<uuid>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "<uuid>",
+											"description": "Patient id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"success\",\n  \"response\": {\n    \"name\": {\n      \"use\": \"official\",\n      \"family\": \"<string>\",\n      \"given\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"id\": \"<uuid>\"\n    },\n    \"gender\": \"other\",\n    \"birthDate\": \"<dateTime>\",\n    \"active\": \"<boolean>\"\n  }\n}"
+						},
+						{
+							"name": "Record not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/patient?id=<uuid>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "<uuid>",
+											"description": "Patient id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"<string>\",\n  \"status\": \"error\"\n}"
+						},
+						{
+							"name": "Internal server error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/patient?id=<uuid>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "<uuid>",
+											"description": "Patient id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"<string>\",\n  \"status\": \"error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Modify patient record by id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": {\n    \"use\": \"official\",\n    \"family\": \"<string>\",\n    \"given\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"gender\": \"other\",\n  \"birthDate\": \"<dateTime>\",\n  \"active\": \"<boolean>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/patient?id=<uuid>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"patient"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "<uuid>",
+									"description": "Patient id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success modified",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": {\n    \"use\": \"official\",\n    \"family\": \"<string>\",\n    \"given\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"gender\": \"other\",\n  \"birthDate\": \"<dateTime>\",\n  \"active\": \"<boolean>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/patient?id=<uuid>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "<uuid>",
+											"description": "Patient id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"success\"\n}"
+						},
+						{
+							"name": "Record not found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": {\n    \"use\": \"official\",\n    \"family\": \"<string>\",\n    \"given\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"gender\": \"other\",\n  \"birthDate\": \"<dateTime>\",\n  \"active\": \"<boolean>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/patient?id=<uuid>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "<uuid>",
+											"description": "Patient id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"<string>\",\n  \"status\": \"error\"\n}"
+						},
+						{
+							"name": "Internal server error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": {\n    \"use\": \"official\",\n    \"family\": \"<string>\",\n    \"given\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"gender\": \"other\",\n  \"birthDate\": \"<dateTime>\",\n  \"active\": \"<boolean>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/patient?id=<uuid>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "<uuid>",
+											"description": "Patient id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"<string>\",\n  \"status\": \"error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete patient record by id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/patient?id=<uuid>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"patient"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "<uuid>",
+									"description": "Patient id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success deleted",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/patient?id=<uuid>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "<uuid>",
+											"description": "Patient id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"success\"\n}"
+						},
+						{
+							"name": "Record not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/patient?id=<uuid>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "<uuid>",
+											"description": "Patient id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"<string>\",\n  \"status\": \"error\"\n}"
+						},
+						{
+							"name": "Internal server error",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/patient?id=<uuid>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "<uuid>",
+											"description": "Patient id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"<string>\",\n  \"status\": \"error\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "patient-search-examples",
+			"item": [
+				{
+					"name": "Multi check",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/patient/search?birth_date=lt2005-01-01T00:00:00+02:00&birth_date=gt1999-12-31T23:59:59Z",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"patient",
+								"search"
+							],
+							"query": [
+								{
+									"key": "birth_date",
+									"value": "lt2005-01-01T00:00:00+02:00",
+									"description": "Search by birth date list with using format Hl7.Fhir.Search#DateTime"
+								},
+								{
+									"key": "birth_date",
+									"value": "gt1999-12-31T23:59:59Z",
+									"description": "Search by birth date list with using format Hl7.Fhir.Search#DateTime"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Return patients record",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/patient/search?birth_date=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient",
+										"search"
+									],
+									"query": [
+										{
+											"key": "birth_date",
+											"value": "<string>",
+											"description": "Search by birth date list with using format Hl7.Fhir.Search#DateTime"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"success\",\n  \"response\": [\n    {\n      \"name\": {\n        \"use\": \"official\",\n        \"family\": \"<string>\",\n        \"given\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<uuid>\"\n      },\n      \"gender\": \"unknown\",\n      \"birthDate\": \"<dateTime>\",\n      \"active\": \"<boolean>\"\n    },\n    {\n      \"name\": {\n        \"use\": \"official\",\n        \"family\": \"<string>\",\n        \"given\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<uuid>\"\n      },\n      \"gender\": \"male\",\n      \"birthDate\": \"<dateTime>\",\n      \"active\": \"<boolean>\"\n    }\n  ]\n}"
+						},
+						{
+							"name": "Internal server error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/patient/search?birth_date=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient",
+										"search"
+									],
+									"query": [
+										{
+											"key": "birth_date",
+											"value": "<string>",
+											"description": "Search by birth date list with using format Hl7.Fhir.Search#DateTime"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"<string>\",\n  \"status\": \"error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Check one day",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/patient/search?birth_date=eq2000-01-01",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"patient",
+								"search"
+							],
+							"query": [
+								{
+									"key": "birth_date",
+									"value": "eq2000-01-01",
+									"description": "Search by birth date list with using format Hl7.Fhir.Search#DateTime"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Return patients record",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/patient/search?birth_date=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient",
+										"search"
+									],
+									"query": [
+										{
+											"key": "birth_date",
+											"value": "<string>",
+											"description": "Search by birth date list with using format Hl7.Fhir.Search#DateTime"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"success\",\n  \"response\": [\n    {\n      \"name\": {\n        \"use\": \"official\",\n        \"family\": \"<string>\",\n        \"given\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<uuid>\"\n      },\n      \"gender\": \"unknown\",\n      \"birthDate\": \"<dateTime>\",\n      \"active\": \"<boolean>\"\n    },\n    {\n      \"name\": {\n        \"use\": \"official\",\n        \"family\": \"<string>\",\n        \"given\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<uuid>\"\n      },\n      \"gender\": \"male\",\n      \"birthDate\": \"<dateTime>\",\n      \"active\": \"<boolean>\"\n    }\n  ]\n}"
+						},
+						{
+							"name": "Internal server error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/patient/search?birth_date=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient",
+										"search"
+									],
+									"query": [
+										{
+											"key": "birth_date",
+											"value": "<string>",
+											"description": "Search by birth date list with using format Hl7.Fhir.Search#DateTime"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"<string>\",\n  \"status\": \"error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Check greater or equal",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/patient/search?birth_date=ge2020-02-29T12:00:00Z",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"patient",
+								"search"
+							],
+							"query": [
+								{
+									"key": "birth_date",
+									"value": "ge2020-02-29T12:00:00Z",
+									"description": "Search by birth date list with using format Hl7.Fhir.Search#DateTime"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Return patients record",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/patient/search?birth_date=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient",
+										"search"
+									],
+									"query": [
+										{
+											"key": "birth_date",
+											"value": "<string>",
+											"description": "Search by birth date list with using format Hl7.Fhir.Search#DateTime"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"success\",\n  \"response\": [\n    {\n      \"name\": {\n        \"use\": \"official\",\n        \"family\": \"<string>\",\n        \"given\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<uuid>\"\n      },\n      \"gender\": \"unknown\",\n      \"birthDate\": \"<dateTime>\",\n      \"active\": \"<boolean>\"\n    },\n    {\n      \"name\": {\n        \"use\": \"official\",\n        \"family\": \"<string>\",\n        \"given\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<uuid>\"\n      },\n      \"gender\": \"male\",\n      \"birthDate\": \"<dateTime>\",\n      \"active\": \"<boolean>\"\n    }\n  ]\n}"
+						},
+						{
+							"name": "Internal server error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/patient/search?birth_date=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient",
+										"search"
+									],
+									"query": [
+										{
+											"key": "birth_date",
+											"value": "<string>",
+											"description": "Search by birth date list with using format Hl7.Fhir.Search#DateTime"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"<string>\",\n  \"status\": \"error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Check year exclude month",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/patient/search?birth_date=eq2000&birth_date=ne2020-03",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"patient",
+								"search"
+							],
+							"query": [
+								{
+									"key": "birth_date",
+									"value": "eq2000",
+									"description": "Search by birth date list with using format Hl7.Fhir.Search#DateTime"
+								},
+								{
+									"key": "birth_date",
+									"value": "ne2020-03",
+									"description": "Search by birth date list with using format Hl7.Fhir.Search#DateTime"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Return patients record",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/patient/search?birth_date=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient",
+										"search"
+									],
+									"query": [
+										{
+											"key": "birth_date",
+											"value": "<string>",
+											"description": "Search by birth date list with using format Hl7.Fhir.Search#DateTime"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"success\",\n  \"response\": [\n    {\n      \"name\": {\n        \"use\": \"official\",\n        \"family\": \"<string>\",\n        \"given\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<uuid>\"\n      },\n      \"gender\": \"unknown\",\n      \"birthDate\": \"<dateTime>\",\n      \"active\": \"<boolean>\"\n    },\n    {\n      \"name\": {\n        \"use\": \"official\",\n        \"family\": \"<string>\",\n        \"given\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"id\": \"<uuid>\"\n      },\n      \"gender\": \"male\",\n      \"birthDate\": \"<dateTime>\",\n      \"active\": \"<boolean>\"\n    }\n  ]\n}"
+						},
+						{
+							"name": "Internal server error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/patient/search?birth_date=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient",
+										"search"
+									],
+									"query": [
+										{
+											"key": "birth_date",
+											"value": "<string>",
+											"description": "Search by birth date list with using format Hl7.Fhir.Search#DateTime"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"<string>\",\n  \"status\": \"error\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8480"
+		}
+	]
+}
