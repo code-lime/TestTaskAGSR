@@ -5,7 +5,7 @@ namespace TaskAGSR.Application.Common.VM;
 
 public class PatientIdentityVM
 {
-    public Use Use { get; set; }
+    public Use Use { get; set; } = Use.Official;
     public required string Family { get; set; }
-    public ImmutableArray<string> Given { get; set; }
+    public ImmutableArray<string> Given { get; set; } = ImmutableArray<string>.Empty;
 }
