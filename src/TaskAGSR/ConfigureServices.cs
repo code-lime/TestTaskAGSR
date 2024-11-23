@@ -1,4 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http.Json;
+using Microsoft.OpenApi.Any;
+using Microsoft.OpenApi.Models;
+using System.ComponentModel;
+using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using TaskAGSR.Swagger;
@@ -22,6 +26,8 @@ public static class ConfigureServices
             .AddEndpointsApiExplorer()
             .AddSwaggerGen(v =>
             {
+                var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                v.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
                 v.SupportNonNullableReferenceTypes();
                 v.SchemaFilter<SwaggerSchemaDefaultFilter>();
                 v.OperationFilter<SwaggerRequestBodyFilter>();
