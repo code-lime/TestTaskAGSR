@@ -1,7 +1,9 @@
+using Hl7.Fhir.Search;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 using TaskAGSR.Application.Common.Interfaces;
 using TaskAGSR.Domain.Entities;
+using TaskAGSR.Infrastructure.Extensions;
 
 namespace TaskAGSR.Infrastructure.DataBase;
 
@@ -28,12 +30,16 @@ public class PatientRepository(
                 .SetProperty(v => v.Given, patient.Given)
                 .SetProperty(v => v.Gender, patient.Gender)
                 .SetProperty(v => v.BirthDate, patient.BirthDate)
-                .SetProperty(v => v.Active, patient.Active)
-                .SetProperty(v => v.Id, id),
+                .SetProperty(v => v.Active, patient.Active),
                 cancellationToken) > 0;
 
     public async Task<bool> DeleteAsync(Guid id, CancellationToken cancellationToken)
         => await context.Patients
             .Where(v => v.Id == id)
             .ExecuteDeleteAsync(cancellationToken) > 0;
+
+    public async Task<IEnumerable<Patient>> SearchByBirthDateAsync(IEnumerable<ISearch<DateTime>> filter, CancellationToken cancellationToken) 
+        => await context.Patients
+            .Where(filter.Select(v => v.SearchExpression).CombineFilter(false).Map<Patient, DateTime, bool>(v => v.BirthDate))
+            .ToListAsync(cancellationToken);
 }

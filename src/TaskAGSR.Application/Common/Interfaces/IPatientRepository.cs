@@ -1,4 +1,5 @@
-﻿using TaskAGSR.Domain.Entities;
+﻿using Hl7.Fhir.Search;
+using TaskAGSR.Domain.Entities;
 
 namespace TaskAGSR.Application.Common.Interfaces;
 
@@ -8,4 +9,6 @@ public interface IPatientRepository
     Task<Patient?> ReadAsync(Guid id, CancellationToken cancellationToken);
     Task<bool> UpdateAsync(Guid id, Patient patient, CancellationToken cancellationToken);
     Task<bool> DeleteAsync(Guid id, CancellationToken cancellationToken);
+
+    Task<IEnumerable<Patient>> SearchByBirthDateAsync(IEnumerable<ISearch<DateTime>> filter, CancellationToken cancellationToken);
 }

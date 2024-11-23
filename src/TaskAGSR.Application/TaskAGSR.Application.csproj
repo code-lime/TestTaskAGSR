@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Hl7.Fhir.Search\Hl7.Fhir.Search.csproj" />
     <ProjectReference Include="..\System.Runtime.CompilerServices\System.Runtime.CompilerServices.csproj" />
     <ProjectReference Include="..\TaskAGSR.Domain\TaskAGSR.Domain.csproj" />
   </ItemGroup>
