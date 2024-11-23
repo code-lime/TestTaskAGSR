@@ -7,6 +7,7 @@ using TaskAGSR;
 using TaskAGSR.Application;
 using TaskAGSR.Infrastructure;
 using TaskAGSR.Infrastructure.DataBase;
+using TaskAGSR.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,6 +45,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseMiddleware<ErrorHandlingMiddleware>();
 app.MapControllers();
 
 app.Run();
